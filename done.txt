@@ -13,3 +13,7 @@ QuerySet Lookups
 CRUD & Views
 CRUD View Outline
 Blog Post List View
+
+30 - Routing the Views (2:04:55)
+31 - Include URLs (2:08:47)
+32 - In App Templates (2:14:35​)

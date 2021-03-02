@@ -4,36 +4,11 @@ from django.shortcuts import get_object_or_404, render
 from .models import BlogPost
 # Create your views here.
 
-
-# GET -> 1 object
-# filter -> [] object
-
-
-def blog_post_detail_page(request, slug):
-    template_name = 'blog_post_detail_page.html'
-    print("DJANGO SAYS", request.method, request.path, request.user)
-    # queryset = BlogPost.objects.filter(slug=slug)
-    # if queryset.count() == 0:
-    #     raise Http404
-    # else:
-    #     obj = queryset.first()
-    obj = get_object_or_404(BlogPost, slug=slug)
-    context = {"object": obj}
-    return render(request, template_name, context)
-
-    # try:
-    #    obj = BlogPost.objects.get(slug=slug)
-    # except BlogPost.DoesNotExist:
-    #     raise Http404
-    # except ValueError:
-    #     raise Http404
-    # query -> database -> data -> django renders it
-
-
 # CRUD
 # GET -> Retrieve / List
 # POST -> Create / Update / Delete
 # CRUD = Create Retrieve Update Delete
+
 
 def blog_post_list_view(request):
     # list out objects
@@ -55,7 +30,7 @@ def blog_post_create_view(request):
 def blog_post_detail_view(request, slug):
     # 1 object -> detail view
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = 'blog_post_detail.html'
+    template_name = 'blog_post_detail2.html'
     context = {"object": obj}
     return render(request, template_name, context)
 
